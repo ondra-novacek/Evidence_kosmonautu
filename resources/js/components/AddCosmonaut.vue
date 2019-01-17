@@ -61,8 +61,17 @@
                     superpower: this.cosmonaut.superpower,
                     birth: this.cosmonaut.date_of_birth
                 })
-                .then(response => {this.$emit('success')})
+                .then(response => {
+                    this.$emit('success');
+                    this.clearInputs();
+                })
                 .catch(error => {this.$emit('failed')});
+            },
+            clearInputs(){
+                this.cosmonaut.name = '';
+                this.cosmonaut.surname = '';
+                this.cosmonaut.superpower = '';
+                this.cosmonaut.date = '';
             }
         }
     }
