@@ -1829,9 +1829,17 @@ __webpack_require__.r(__webpack_exports__);
         birth: this.cosmonaut.date_of_birth
       }).then(function (response) {
         _this.$emit('success');
+
+        _this.clearInputs();
       }).catch(function (error) {
         _this.$emit('failed');
       });
+    },
+    clearInputs: function clearInputs() {
+      this.cosmonaut.name = '';
+      this.cosmonaut.surname = '';
+      this.cosmonaut.superpower = '';
+      this.cosmonaut.date = '';
     }
   }
 });
